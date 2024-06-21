@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('wines', function (Blueprint $table) {
             $table->id();
+            $table->string('slug')->unique();
             $table->string('wine');
             $table->string('review');
             $table->float('average', 2, 1);
