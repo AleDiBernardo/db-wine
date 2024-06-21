@@ -20,7 +20,7 @@ class WineController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.wines.index');
     }
 
     /**
