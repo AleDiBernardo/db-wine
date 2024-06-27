@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('slug')->unique();
             $table->string('wine');
-            $table->string('review');
-            $table->float('average', 2, 1);
+            $table->string('review')->nullable();
+            $table->float('average', 2, 1)->nullable();
             $table->string('genre');
             $table->string('image')->nullable();
             $table->string('winery');
