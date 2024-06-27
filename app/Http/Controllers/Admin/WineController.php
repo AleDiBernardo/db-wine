@@ -25,7 +25,7 @@ class WineController extends Controller
      */
     public function create()
     {
-        return view('admin.wines.index');
+        return view('admin.wines.create');
     }
 
     /**
@@ -33,11 +33,13 @@ class WineController extends Controller
      */
     public function store(StoreWineRequest $request)
     {
+
         $newWine = new Wine();
         $newWine->fill($request->all());
         $newWine->slug = Str::slug($newWine->wine);
         $newWine->save();
         return redirect()->route('admin.wines.show', compact('newWine'));
+
     }
 
     /**
