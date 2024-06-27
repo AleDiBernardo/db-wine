@@ -33,7 +33,7 @@
                         <td>{{ $wine->average }}</td>
                         <td>
                             <div class="d-flex gap-2">
-                                <a href="{{ route('admin.wines.show', ['wine' => $wine->slug]) }}"
+                                <a href="{{ route('admin.wines.show', ['wine' => $wine->id]) }}"
                                     class="btn btn-success fw-bold text-light">Details</a>
                                 <a href="{{ route('admin.wines.edit', ['wine' => $wine->slug]) }}"
                                     class="btn btn-warning fw-bold text-light">Edit</a>
