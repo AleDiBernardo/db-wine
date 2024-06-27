@@ -64,9 +64,12 @@ class WineController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(StoreWineRequest $request, Wine $wine)
     {
-        //
+        $wine->fill($request->all());
+        $wine->slug = Str::slug($wine->wine);
+        $wine->save();
+        return redirect()->route('admin.wines.show',[$wine->slug]);
     }
 
     /**
