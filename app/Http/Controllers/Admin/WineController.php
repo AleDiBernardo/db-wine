@@ -38,7 +38,7 @@ class WineController extends Controller
         $newWine->fill($request->all());
         $newWine->slug = Str::slug($newWine->wine);
         $newWine->save();
-        return redirect()->route('admin.wines.show', compact('newWine'));
+        return redirect()->route('admin.wines.show', $newWine->slug);
 
     }
 

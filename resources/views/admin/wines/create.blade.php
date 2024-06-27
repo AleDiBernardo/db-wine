@@ -4,6 +4,8 @@
     <div class="container">
         <h1>Add a new Wine</h1>
 
+        @include('partials.errors')
+
         <form action="{{ route('admin.wines.store') }}" method="POST">
             @csrf
 

@@ -22,7 +22,6 @@ class StoreWineRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'slug' => ['required', 'unique:wines,slug', 'string', 'max:255'],
             'wine' => ['required', 'string', 'max:255'],
             'review' => [ 'string', 'max:255'],
             'average' => [ 'numeric', 'min:0', 'max:10'],

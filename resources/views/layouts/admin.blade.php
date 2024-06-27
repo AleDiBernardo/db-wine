@@ -70,6 +70,13 @@
                   <i class="fa-solid fa-list"></i> Lista vini
                 </a>
               </li>
+
+              <li class="nav-item">
+                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.wines.create' ? 'bg-secondary' : '' }}"
+                  href="{{ route('admin.wines.create') }}">
+                  <i class="fa-solid fa-list"></i> Aggiungi Vino
+                </a>
+              </li>
             </ul>
 
 
