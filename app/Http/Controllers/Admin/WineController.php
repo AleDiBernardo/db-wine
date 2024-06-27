@@ -56,9 +56,9 @@ class WineController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Wine $wine)
     {
-        //
+        return redirect()->route('admin.wines.edit', ['wine'=> $wine->slug]);
     }
 
     /**
