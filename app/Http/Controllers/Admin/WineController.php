@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Wine;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreWineRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class WineController extends Controller
 {
@@ -29,9 +31,13 @@ class WineController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreWineRequest $request)
     {
-        //
+        $newWine = new Wine();
+        $newWine->fill($request->all());
+        $newWine->slug = Str::slug($newWine->wine);
+        $newWine->save();
+        return redirect()->route('admin.wines.show', compact('newWine'));
     }
 
     /**
@@ -39,7 +45,10 @@ class WineController extends Controller
      */
     public function show(Wine $wine)
     {
-        return view('admin.wines.show', compact('wine'));
+
+
+        return view('admin.wines.show',compact('wine'));
+
     }
 
     /**
@@ -61,8 +70,9 @@ class WineController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Wine $wine)
     {
-        //
+        $wine->delete();
+        return redirect()->route('admin.wines.index')->with('message', 'The project '. $wine->wine . ' is delete!');
     }
 }
