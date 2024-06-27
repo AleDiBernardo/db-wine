@@ -52,4 +52,6 @@
 
         </table>
     </div>
+    <div>{{ $winesList->links() }}</div>
+
 @endsection
