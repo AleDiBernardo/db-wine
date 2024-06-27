@@ -23,7 +23,7 @@ class WineController extends Controller
      */
     public function create()
     {
-        return view('admin.wines.index');
+        return view('admin.wines.create');
     }
 
     /**
@@ -31,7 +31,7 @@ class WineController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // alessandro non è capace!
     }
 
     /**
