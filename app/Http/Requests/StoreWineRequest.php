@@ -11,7 +11,7 @@ class StoreWineRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,11 +24,11 @@ class StoreWineRequest extends FormRequest
         return [
             'slug' => ['required', 'unique:wines,slug', 'string', 'max:255'],
             'wine' => ['required', 'string', 'max:255'],
-            'review' => ['required', 'string', 'max:255'],
-            'average' => ['required', 'numeric', 'min:0', 'max:10'],
-            'genre' => ['required', 'string', 'max:255'],
+            'review' => [ 'string', 'max:255'],
+            'average' => [ 'numeric', 'min:0', 'max:10'],
+            'genre' => [ 'string', 'max:255'],
             'image' => ['nullable', 'string', 'max:255'],
-            'winery' => ['required', 'string', 'max:255'],
+            'winery' => [ 'string', 'max:255'],
             'location' => ['nullable', 'string', 'max:255'],
         ];
     }
