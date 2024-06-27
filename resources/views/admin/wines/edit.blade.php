@@ -6,8 +6,9 @@
 
     @include('partials.errors')
 
-    <form action="{{ route('admin.wines.store') }}" method="POST">
+    <form action="{{ route('admin.wines.update', ['wine'=>$wine->slug]) }}" method="POST">
         @csrf
+        @method('PUT')
 
         <div class="mb-3">
             <label for="wine" class="form-label">Name</label>

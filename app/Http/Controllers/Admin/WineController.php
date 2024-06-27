@@ -58,7 +58,7 @@ class WineController extends Controller
      */
     public function edit(Wine $wine)
     {
-        return redirect()->route('admin.wines.edit', ['wine'=> $wine->slug]);
+        return view('admin.wines.edit', compact('wine'));
     }
 
     /**

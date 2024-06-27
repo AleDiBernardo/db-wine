@@ -28,7 +28,7 @@
                     <li><strong>Località: </strong> {{$wine->location}}</li>
                     <li><strong>Genere: </strong> {{ucfirst( $wine->genre)}}</li>
                     <li><strong>Recensioni: </strong> {{$wine->review ?: 'N/D' }}</li>
-                    <li><strong>Recensioni: </strong> {{$wine->average ?: 'N/D' }}</li>
+                    <li><strong>Media: </strong> {{$wine->average ?: 'N/D' }}</li>
 
                 </ul>
             </div>
