@@ -31,6 +31,8 @@
                         <td>{{ $wine->review }}</td>
                         <td>{{ $wine->genre }}</td>
                         <td>{{ $wine->average }}</td>
+                        <td>{{ $wine->average }}</td>
+
                         <td>
                             <div class="d-flex gap-2">
                                 <a href="{{ route('admin.wines.show', ['wine' => $wine->id]) }}"
