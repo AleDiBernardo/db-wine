@@ -32,7 +32,8 @@
                         <td>{{ $wine->genre }}</td>
                         <td>{{ $wine->average }}</td>
                         <td>{{ $wine->average }}</td>
-                        {{-- alessandro non è capace --}}
+
+                        {{-- Kejdi doveva fare tutto il progetto --}}
 
                         <td>
                             <div class="d-flex gap-2">
